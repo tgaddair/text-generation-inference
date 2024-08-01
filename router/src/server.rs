@@ -2270,7 +2270,7 @@ pub enum WebServerError {
 }
 
 /// Create a post_processor for the LlamaTokenizer
-fn create_post_processor(
+pub fn create_post_processor(
     tokenizer: &Tokenizer,
     tokenizer_config: &HubTokenizerConfig,
 ) -> Result<TemplateProcessing, tokenizers::processors::template::TemplateProcessingBuilderError> {
