@@ -338,6 +338,8 @@ pub enum InferError {
     TemplateError(#[from] minijinja::Error),
     #[error("Tool error: {0}")]
     ToolError(String),
+    #[error("Scheduling error: {0}")]
+    SchedulingError(String),
 }
 
 impl InferError {
@@ -349,6 +351,7 @@ impl InferError {
             InferError::IncompleteGeneration => "incomplete_generation",
             InferError::TemplateError(_) => "template_error",
             InferError::ToolError(_) => "tool_error",
+            InferError::SchedulingError(_) => "schedling"
         }
     }
 }
