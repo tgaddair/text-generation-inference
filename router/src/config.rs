@@ -112,6 +112,13 @@ pub struct ClipVisionModel {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
+pub struct Idefics3 {
+    pub(crate) vision_encoder_max_image_size: usize,
+    pub(crate) image_seq_len: usize,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub struct Idefics2 {}
 
 impl Idefics2 {
@@ -147,6 +154,7 @@ pub enum Config {
     Mistral,
     Idefics,
     Idefics2(Idefics2),
+    Idefics3(Idefics3),
     Ssm,
     GptBigcode,
     Santacoder,
